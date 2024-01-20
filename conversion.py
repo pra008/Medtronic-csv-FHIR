@@ -159,8 +159,8 @@ def generate_medtronic_glucose_observation(df_original, patient_id):
         ]
 
     # Apply the function only to specific columns in the DataFrame to avoid float issues
-    df[cols_with_cgm_glucose] = df[cols_with_cgm_glucose].map(replace_commas_with_periods)
-    df[cols_with_bg_glucose] = df[cols_with_bg_glucose].map(replace_commas_with_periods)
+    df[cols_with_cgm_glucose] = df[cols_with_cgm_glucose].applymap(replace_commas_with_periods)
+    df[cols_with_bg_glucose] = df[cols_with_bg_glucose].applymap(replace_commas_with_periods)
 
     # df now contains the filtered and modified DataFrame
     for _, row in df.iloc[0:].iterrows():
@@ -598,7 +598,7 @@ def generate_medtronic_carbohydrate_observation(df_original, patient_id):
     df.dropna(subset=cols_with_grams, how='all', inplace=True)
 
     # Apply the function only to specific columns in the DataFrame to avoid float issues
-    df[cols_with_grams] = df[cols_with_grams].map(replace_commas_with_periods)
+    df[cols_with_grams] = df[cols_with_grams].applymap(replace_commas_with_periods)
 
     # Iterate over rows and generate MedicationAdministration for each row
     for _, row in df.iloc[1:].iterrows():

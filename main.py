@@ -20,8 +20,8 @@ def load_data_from_environment():
         """
     # Load patient_id and csv_file from environment variables or set default values
     load_dotenv()
-    fhir_id = os.getenv('PATIENT_ID') or "patient_id"
-    file = os.getenv('CSV_FILE') or "DEMO/Bundles"
+    fhir_id = os.getenv('PATIENT_ID') or ""
+    file = os.getenv('CSV_FILE') or "DEMO/data.csv"
     return file, fhir_id
 
 

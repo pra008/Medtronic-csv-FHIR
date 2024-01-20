@@ -31,7 +31,6 @@ Additionally, associated FHIR bundles have been generated based on the provided 
 
 Note: Some weekly data may be divided into multiple parts, especially larger bundles that could potentially exceed the processing capacity of an FHIR server.
 
-
 ## Setup
 
 1. Clone the repository:
@@ -61,6 +60,39 @@ This script will perform the following tasks:
 - Activates the virtual environment.
 - Installs the required dependencies specified in requirements.txt.
 - Once the setup is complete, you can start using the project by following the usage instructions or running your desired commands.
+
+## Running the Application
+
+To run the application, a convenience script is provided which takes care of setting up the necessary environment variables and starting the application.
+
+### On Windows
+
+1. Open the Command Prompt or PowerShell in the directory where your project is located.
+2. Execute the provided batch script `run.bat` by typing the following command and pressing Enter:
+
+```bash
+run.bat
+```
+
+This will load the environment variables from the `.env` file, activate the virtual environment if available, and run the Python script. Ensure that your `.env` file is in the same directory as the script.
+
+3. The script will attempt to execute the Python application and will provide feedback in the command line interface. If there are any errors, the script will display a message with "Failed to run Python script."
+
+Make sure you have Python installed and that the path to your Python executable is correctly set in your system's PATH environment variable before running the script.
+
+### On Unix-based Systems (Linux/macOS)
+
+For Unix-based systems, ensure you have the appropriate permissions to execute the script by running:
+
+```bash
+chmod +x run.sh
+```
+
+Then you can run the script with:
+
+```bash
+./run.sh
+```
 
 ## Installation Step by Step
 
