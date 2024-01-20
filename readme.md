@@ -85,13 +85,7 @@ Make sure you have Python installed and that the path to your Python executable 
 For Unix-based systems, ensure you have the appropriate permissions to execute the script by running:
 
 ```bash
-chmod +x run.sh
-```
-
-Then you can run the script with:
-
-```bash
-./run.sh
+python3 main.py
 ```
 
 ## Installation Step by Step
